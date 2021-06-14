@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DecorativeBuilding
   m_EditorClassIdentifier: 
   type: 0
-  moneyCost: 0
-  woodCost: 0
-  brickCost: 0
-  buildTime: 0
+  moneyCost: 10
+  woodCost: 10
+  brickCost: 10
+  buildTime: 10

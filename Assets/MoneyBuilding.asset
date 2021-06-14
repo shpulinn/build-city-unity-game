@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08ee58791e8d6544937fb5e709ac5ab, type: 3}
   m_Name: MoneyBuilding
   m_EditorClassIdentifier: 
-  type: 0
-  moneyCost: 0
-  woodCost: 0
-  brickCost: 0
-  buildTime: 0
+  type: 1
+  moneyCost: 30
+  woodCost: 30
+  brickCost: 30
+  buildTime: 20
