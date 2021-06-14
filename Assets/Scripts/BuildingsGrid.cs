@@ -59,7 +59,8 @@ public class BuildingsGrid : MonoBehaviour {
                 selectedBuilding.transform.position = new Vector3(x, 0, z);
 
                 if (Input.GetMouseButtonDown(0) && canPlace) {
-                    selectedBuilding = null;
+                    selectedBuilding.gameObject.GetComponent<Building>().StartBuilding();
+                    selectedBuilding = null;                    
                 }
             }
         }
