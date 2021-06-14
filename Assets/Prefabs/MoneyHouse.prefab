@@ -139,4 +139,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d73d666e776e9443805472aac381b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildingScriptableObj: {fileID: 11400000, guid: 315d182927d9d574bb3f69ca9aee4522, type: 2}
   Size: {x: 2, y: 2}
