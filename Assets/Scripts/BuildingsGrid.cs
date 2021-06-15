@@ -71,16 +71,39 @@ public class BuildingsGrid : MonoBehaviour {
                 if (x < 0 || x > GridSize.x - selectedBuilding.Size.x) canPlace = false;
                 if (z < 0 || z > GridSize.x - selectedBuilding.Size.y) canPlace = false;
 
+                if (canPlace && IsTileTaken(x, z)) canPlace = false;
+
                 selectedBuilding.transform.position = new Vector3(x, 0, z);
+                selectedBuilding.ShowAvailable(canPlace);
 
                 if (Input.GetMouseButtonDown(0) && canPlace) {
-                    selectedBuilding.gameObject.GetComponent<Building>().StartBuilding();
-                    ResourcesScriptableObj.money -= selectedBuilding.BuildingScriptableObj.moneyCost;
-                    ResourcesScriptableObj.wood -= selectedBuilding.BuildingScriptableObj.woodCost;
-                    ResourcesScriptableObj.bricks -= selectedBuilding.BuildingScriptableObj.brickCost;
-                    selectedBuilding = null;                    
+                    SetSelectedBuilding(x, z);
                 }
             }
         }
+    }
+
+    private bool IsTileTaken(int placeX, int placeZ) {
+        for (int x = 0; x < selectedBuilding.Size.x; x++) {
+            for (int z = 0; z < selectedBuilding.Size.y; z++) {
+                if (grid[placeX + x, placeZ + z] != null) return true;
+            }
+        }
+        return false;
+    }
+
+    private void SetSelectedBuilding(int placeX, int placeZ) {
+
+        for (int x = 0; x < selectedBuilding.Size.x; x++) {
+            for (int z = 0; z < selectedBuilding.Size.y; z++) {
+                grid[placeX + x, placeZ + z] = selectedBuilding;
+            }
+        }
+
+        selectedBuilding.gameObject.GetComponent<Building>().StartBuilding();
+        ResourcesScriptableObj.money -= selectedBuilding.BuildingScriptableObj.moneyCost;
+        ResourcesScriptableObj.wood -= selectedBuilding.BuildingScriptableObj.woodCost;
+        ResourcesScriptableObj.bricks -= selectedBuilding.BuildingScriptableObj.brickCost;
+        selectedBuilding = null;
     }
 }
