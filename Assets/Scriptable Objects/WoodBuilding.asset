@@ -17,3 +17,5 @@ MonoBehaviour:
   woodCost: 10
   brickCost: 0
   buildTime: 15
+  produceTime: 15
+  amountOfResource: 7
