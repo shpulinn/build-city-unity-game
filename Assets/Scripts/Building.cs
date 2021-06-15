@@ -60,16 +60,16 @@ public class Building : MonoBehaviour {
 
     private IEnumerator MakeResourceCoroutine(BuildingScriptableObj buildingScriptableObj) {
         inReload = true;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(buildingScriptableObj.produceTime);
         switch (buildingScriptableObj.type) {
             case "money":
-            ResourcesScriptableObj.money += 10;
+            ResourcesScriptableObj.money += buildingScriptableObj.amountOfResource;
             break;
             case "wood":
-            ResourcesScriptableObj.wood += 10;
+            ResourcesScriptableObj.wood += buildingScriptableObj.amountOfResource;
             break;
             case "brick":
-            ResourcesScriptableObj.bricks += 10;
+            ResourcesScriptableObj.bricks += buildingScriptableObj.amountOfResource;
             break;
             default:
             break;
