@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 501142259}
   - component: {fileID: 501142261}
   - component: {fileID: 501142260}
+  - component: {fileID: 501142262}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -477,6 +478,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501142258}
   m_CullTransparentMesh: 1
+--- !u!114 &501142262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501142258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f948c4624bcdea47982502301b02764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResourcesScriptableObj: {fileID: 11400000, guid: c5a3c96687bd2f84dac3f84a8c350083, type: 2}
+  moneyText: {fileID: 222591764}
+  woodText: {fileID: 538956663}
+  bricksText: {fileID: 1499359628}
 --- !u!1 &529158231
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GridSize: {x: 30, y: 30}
+  ResourcesScriptableObj: {fileID: 11400000, guid: c5a3c96687bd2f84dac3f84a8c350083, type: 2}
 --- !u!1 &1154249756
 GameObject:
   m_ObjectHideFlags: 0
