@@ -140,4 +140,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuildingScriptableObj: {fileID: 11400000, guid: 315d182927d9d574bb3f69ca9aee4522, type: 2}
+  ResourcesScriptableObj: {fileID: 11400000, guid: c5a3c96687bd2f84dac3f84a8c350083, type: 2}
   Size: {x: 2, y: 2}
