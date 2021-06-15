@@ -19,9 +19,9 @@ public class Building : MonoBehaviour {
     }
 
     private void Update() {
-        if (BuildingScriptableObj.type.Equals(1)) {
+        if (!BuildingScriptableObj.type.Equals("decorative")) {
             if (isBuilded && !inReload) {
-                StartCoroutine(MakeMoneyCoroutine());
+                StartCoroutine(MakeResourceCoroutine(BuildingScriptableObj));
             }
         }
     }
@@ -58,10 +58,23 @@ public class Building : MonoBehaviour {
         isBuilded = true;
     }
 
-    private IEnumerator MakeMoneyCoroutine() {
+    private IEnumerator MakeResourceCoroutine(BuildingScriptableObj buildingScriptableObj) {
         inReload = true;
         yield return new WaitForSeconds(10f);
-        ResourcesScriptableObj.money += 10;
+        switch (buildingScriptableObj.type) {
+            case "money":
+            ResourcesScriptableObj.money += 10;
+            break;
+            case "wood":
+            ResourcesScriptableObj.wood += 10;
+            break;
+            case "brick":
+            ResourcesScriptableObj.bricks += 10;
+            break;
+            default:
+            break;
+        }
         inReload = false;
     }
+
 }
