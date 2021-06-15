@@ -8,6 +8,7 @@ public class BuildButton : MonoBehaviour {
 
     public void OnBuildButtonClick() {
         buildScreen.SetActive(!buildScreen.activeSelf);
+        GetComponent<CameraController>().canControl = !buildScreen.activeSelf;
     }
 
 }

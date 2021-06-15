@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
+    public bool canControl = true;
     public Vector3 newPosition;
     public float movementTime;
     private Camera cam;
@@ -17,7 +18,9 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        HandleMouseInput();
+        if (canControl) {
+            HandleMouseInput();
+        }
     }
 
     private void HandleMouseInput() {
