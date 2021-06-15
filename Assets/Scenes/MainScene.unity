@@ -381,7 +381,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 81
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 189
     m_Alignment: 4
@@ -592,7 +592,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 81
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 189
     m_Alignment: 4
@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 1289361866}
   - component: {fileID: 1289361865}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BuildButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1479,7 +1479,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 81
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 189
     m_Alignment: 4
@@ -1616,6 +1616,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346482651}
     m_Modifications:
+    - target: {fileID: 1318700904096064642, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318700904096064642, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318700904096064642, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318700904096064642, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319676507979265176, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319676507979265176, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319676507979265176, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964751697}
+    - target: {fileID: 1319676507979265176, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319676507979265176, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartPlacingBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319676507979265176, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildingsGrid, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319676507979265176, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5794009772288011406, guid: 38d34a1a64616434e94c1f10c8093b57, type: 3}
+    - target: {fileID: 1319676507979265176, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Building, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1995806970265086950, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1661,6 +1709,54 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5794009772288011406, guid: ab8ad6391e5558b45a7a0da3f8f6b2a5, type: 3}
     - target: {fileID: 4401861960571457161, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Building, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571270407899519283, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571270407899519283, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571270407899519283, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571270407899519283, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659014975298073506, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659014975298073506, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659014975298073506, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964751697}
+    - target: {fileID: 4659014975298073506, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659014975298073506, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartPlacingBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659014975298073506, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildingsGrid, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659014975298073506, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5794009772288011406, guid: b2a27072821ad4f4ea47d4230c80dbd5, type: 3}
+    - target: {fileID: 4659014975298073506, guid: 31c1519d8f09ea44bac1a4c602359405, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: Building, Assembly-CSharp
       objectReference: {fileID: 0}
