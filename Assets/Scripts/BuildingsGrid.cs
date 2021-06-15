@@ -76,6 +76,10 @@ public class BuildingsGrid : MonoBehaviour {
                 selectedBuilding.transform.position = new Vector3(x, 0, z);
                 selectedBuilding.ShowAvailable(canPlace);
 
+                if (Input.GetMouseButtonDown(0) && !canPlace) {
+                    Debug.LogError("Unable to build here");
+                }
+
                 if (Input.GetMouseButtonDown(0) && canPlace) {
                     SetSelectedBuilding(x, z);
                 }
