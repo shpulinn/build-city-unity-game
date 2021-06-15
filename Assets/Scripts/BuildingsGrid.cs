@@ -6,6 +6,7 @@ public class BuildingsGrid : MonoBehaviour {
 
     public Vector2Int GridSize = new Vector2Int(30, 30);
 
+    [SerializeField] private ResourcesScriptableObj ResourcesScriptableObj;
     private Building[,] grid;
     private Building selectedBuilding;
     private Camera cam;
@@ -23,15 +24,29 @@ public class BuildingsGrid : MonoBehaviour {
     }
 
     public void StartPlacingBuilding(Building buildingPrefab) {
+
         canPlace = false;
         if (selectedBuilding != null) {
             Destroy(selectedBuilding.gameObject);
         }
-
-        selectedBuilding = Instantiate(buildingPrefab);
-        if (buildingScreen != null) {
-            buildingScreen.gameObject.SetActive(false);
-            cameraController.canControl = true;
+        if (ResourcesScriptableObj.money < buildingPrefab.gameObject.GetComponent<Building>().BuildingScriptableObj.moneyCost) {
+            Debug.LogError("Now enougn money!");
+            return;
+        }
+        else if (ResourcesScriptableObj.wood < buildingPrefab.gameObject.GetComponent<Building>().BuildingScriptableObj.woodCost) {
+            Debug.LogError("Now enougn wood!");
+            return;
+        }
+        else if (ResourcesScriptableObj.bricks < buildingPrefab.gameObject.GetComponent<Building>().BuildingScriptableObj.brickCost) {
+            Debug.LogError("Now enougn bricks!");
+            return;
+        }
+        else {
+            selectedBuilding = Instantiate(buildingPrefab);
+            if (buildingScreen != null) {
+                buildingScreen.gameObject.SetActive(false);
+                cameraController.canControl = true;
+            }
         }
     }
 
@@ -60,6 +75,9 @@ public class BuildingsGrid : MonoBehaviour {
 
                 if (Input.GetMouseButtonDown(0) && canPlace) {
                     selectedBuilding.gameObject.GetComponent<Building>().StartBuilding();
+                    ResourcesScriptableObj.money -= selectedBuilding.BuildingScriptableObj.moneyCost;
+                    ResourcesScriptableObj.wood -= selectedBuilding.BuildingScriptableObj.woodCost;
+                    ResourcesScriptableObj.bricks -= selectedBuilding.BuildingScriptableObj.brickCost;
                     selectedBuilding = null;                    
                 }
             }
