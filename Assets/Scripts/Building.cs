@@ -4,11 +4,14 @@ using UnityEngine;
 public class Building : MonoBehaviour {
 
     public BuildingScriptableObj BuildingScriptableObj;
+    [SerializeField] private ResourcesScriptableObj ResourcesScriptableObj;
 
     public Vector2Int Size = Vector2Int.one;
 
     private MeshRenderer MeshRenderer;
     private Color normalColor;
+    private bool isBuilded = false;
+    private bool inReload = false;
 
     private void Awake() {
         MeshRenderer = GetComponentInChildren<MeshRenderer>();
@@ -36,5 +39,21 @@ public class Building : MonoBehaviour {
             yield return null;
         }
         mr.material.color = normalColor;
+        isBuilded = true;
+    }
+
+    private void Update() {
+        if (BuildingScriptableObj.type.Equals(1)) {
+            if (isBuilded && !inReload) {
+                StartCoroutine(MakeMoneyCoroutine());
+            }
+        }
+    }
+
+    private IEnumerator MakeMoneyCoroutine() {
+        inReload = true;
+        yield return new WaitForSeconds(10f);
+        ResourcesScriptableObj.money += 10;
+        inReload = false;
     }
 }
