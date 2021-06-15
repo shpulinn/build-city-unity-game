@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb21ae56a00912e4cbc285ccfff00933, type: 3}
   m_Name: Recources
   m_EditorClassIdentifier: 
-  money: 40
-  wood: 10
-  bricks: 10
+  money: 500
+  wood: 500
+  bricks: 500
