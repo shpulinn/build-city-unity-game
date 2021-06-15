@@ -18,6 +18,22 @@ public class Building : MonoBehaviour {
         normalColor = MeshRenderer.material.color;
     }
 
+    private void Update() {
+        if (BuildingScriptableObj.type.Equals(1)) {
+            if (isBuilded && !inReload) {
+                StartCoroutine(MakeMoneyCoroutine());
+            }
+        }
+    }
+
+    public void ShowAvailable(bool available) {
+        if (available) {
+            MeshRenderer.material.color = Color.green;
+        } else {
+            MeshRenderer.material.color = Color.red;
+        }
+    }
+
     private void OnDrawGizmos() {
         for (int x = 0; x < Size.x; x++) {
             for (int y = 0; y < Size.y; y++) {
@@ -40,14 +56,6 @@ public class Building : MonoBehaviour {
         }
         mr.material.color = normalColor;
         isBuilded = true;
-    }
-
-    private void Update() {
-        if (BuildingScriptableObj.type.Equals(1)) {
-            if (isBuilded && !inReload) {
-                StartCoroutine(MakeMoneyCoroutine());
-            }
-        }
     }
 
     private IEnumerator MakeMoneyCoroutine() {
