@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08ee58791e8d6544937fb5e709ac5ab, type: 3}
   m_Name: DecorativeBuilding
   m_EditorClassIdentifier: 
-  type: 0
+  type: decorative
   moneyCost: 10
   woodCost: 10
   brickCost: 10
