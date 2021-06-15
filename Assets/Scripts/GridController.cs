@@ -1,9 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GridController : MonoBehaviour {
+
+    // script generates field if tiles prefabs
 
     [SerializeField] private GameObject prefab;
     [SerializeField] private int rows;
@@ -16,10 +16,10 @@ public class GridController : MonoBehaviour {
     }
 
     private void GenerateGrid() {
-        GameObject referenceTile = (GameObject)Instantiate(prefab);
+        GameObject referenceTile = Instantiate(prefab);
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
-                GameObject tile = (GameObject)Instantiate(referenceTile, transform);
+                GameObject tile = Instantiate(referenceTile, transform);
                 tiles.Add(tile);
 
                 float posX = col * tileSize;
@@ -29,9 +29,5 @@ public class GridController : MonoBehaviour {
             }
         }
         Destroy(referenceTile);
-    }
-
-    void Update() {
-
     }
 }

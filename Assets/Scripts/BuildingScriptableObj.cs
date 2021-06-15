@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Building", menuName = "Buildings")]
+[CreateAssetMenu(fileName = "Building", menuName = "Building")]
 public class BuildingScriptableObj : ScriptableObject {
 
     public string type; // type of house (decorative, money, wood, etc.)
