@@ -11,13 +11,15 @@ public class Building : MonoBehaviour {
     public Vector2Int Size = Vector2Int.one;
 
     private MeshRenderer MeshRenderer;
-    private Color normalColor;
+    private Color[] normalColors = new Color[5];
     private bool isBuilded = false;
     private bool isProducing = false;
 
     private void Awake() {
         MeshRenderer = GetComponentInChildren<MeshRenderer>();
-        normalColor = MeshRenderer.material.color;
+        for (int i = 0; i < MeshRenderer.materials.Length; i++) {
+            normalColors[i] = MeshRenderer.materials[i].color;
+        }
     }
 
     private void Update() {
@@ -31,9 +33,13 @@ public class Building : MonoBehaviour {
     // colorize house with green color if player can build that house in current place and with red color if it unable to build here
     public void ShowAvailable(bool available) {
         if (available) {
-            MeshRenderer.material.color = Color.green;
+            foreach (Material mat in MeshRenderer.materials) {
+                mat.color = Color.green;
+            }
         } else {
-            MeshRenderer.material.color = Color.red;
+            foreach (Material mat in MeshRenderer.materials) {
+                mat.color = Color.red;
+            }
         }
     }
 
@@ -54,12 +60,16 @@ public class Building : MonoBehaviour {
     // coroutine for visualising build process. while house is building, it colorize with red color. and when it built color retuns to in normal.
     private IEnumerator BuildingCoroutine(float time, MeshRenderer mr) {
         float timeLeft = 0f;
-        mr.material.color = Color.red;
+        for (int i = 0; i < normalColors.Length; i++) {
+            mr.materials[i].color = Color.red;
+        }
         while (timeLeft < time) {
             timeLeft += Time.deltaTime;
             yield return null;
         }
-        mr.material.color = normalColor;
+        for (int i = 0; i < normalColors.Length; i++) {
+            mr.materials[i].color = normalColors[i];
+        }
         isBuilded = true;
     }
 
